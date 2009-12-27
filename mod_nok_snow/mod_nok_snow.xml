@@ -46,37 +46,47 @@
 		<filename>xmas_tree.gif</filename>
 	</media>
 	<params>
-		<param name="speed" type="text" default="5" label="PARAM SPEED LABEL" description="PARAM SPEED DESCRIPTION" />
-		<param name="duration" type="text" default="0" label="PARAM DURATION LABEL" description="PARAM DURATION DESCRIPTION" />
+		<param name="speed" type="text" default="5" size="2" label="PARAM SPEED LABEL" description="PARAM SPEED DESCRIPTION" />
+		<param name="duration" type="text" default="0" size="3" label="PARAM DURATION LABEL" description="PARAM DURATION DESCRIPTION" />
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="pic1_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 1 FILE LABEL" description="PARAM PICTURE 1 FILE DESCRIPTION" />
-		<param name="pic1_amount" type="text" default="1" label="PARAM PICTURE 1 AMOUNT LABEL" description="PARAM PICTURE 1 AMOUNT DESCRIPTION" />
+		<param name="pic1_amount" type="text" default="1" size="2" label="PARAM PICTURE 1 AMOUNT LABEL" description="PARAM PICTURE 1 AMOUNT DESCRIPTION" />
+		<param name="pic1_link" type="text" default="" size="50" label="PARAM PICTURE 1 LINK LABEL" description="PARAM PICTURE 1 LINK DESCRIPTION" />
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="pic2_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 2 FILE LABEL" description="PARAM PICTURE 2 FILE DESCRIPTION" />
-		<param name="pic2_amount" type="text" default="1" label="PARAM PICTURE 2 AMOUNT LABEL" description="PARAM PICTURE 2 AMOUNT DESCRIPTION" />
+		<param name="pic2_amount" type="text" default="1" size="2" label="PARAM PICTURE 2 AMOUNT LABEL" description="PARAM PICTURE 2 AMOUNT DESCRIPTION" />
+		<param name="pic2_link" type="text" default="" size="50" label="PARAM PICTURE 2 LINK LABEL" description="PARAM PICTURE 2 LINK DESCRIPTION" />
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="pic3_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 3 FILE LABEL" description="PARAM PICTURE 3 FILE DESCRIPTION" />
-		<param name="pic3_amount" type="text" default="1" label="PARAM PICTURE 3 AMOUNT LABEL" description="PARAM PICTURE 3 AMOUNT DESCRIPTION" />
+		<param name="pic3_amount" type="text" default="1" size="2" label="PARAM PICTURE 3 AMOUNT LABEL" description="PARAM PICTURE 3 AMOUNT DESCRIPTION" />
+		<param name="pic3_link" type="text" default="" size="50" label="PARAM PICTURE 3 LINK LABEL" description="PARAM PICTURE 3 LINK DESCRIPTION" />
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="pic4_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 4 FILE LABEL" description="PARAM PICTURE 4 FILE DESCRIPTION" />
-		<param name="pic4_amount" type="text" default="1" label="PARAM PICTURE 4 AMOUNT LABEL" description="PARAM PICTURE 4 AMOUNT DESCRIPTION" />
+		<param name="pic4_amount" type="text" default="1" size="2" label="PARAM PICTURE 4 AMOUNT LABEL" description="PARAM PICTURE 4 AMOUNT DESCRIPTION" />
+		<param name="pic4_link" type="text" default="" size="50" label="PARAM PICTURE 4 LINK LABEL" description="PARAM PICTURE 4 LINK DESCRIPTION" />
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="pic5_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 5 FILE LABEL" description="PARAM PICTURE 5 FILE DESCRIPTION" />
-		<param name="pic5_amount" type="text" default="1" label="PARAM PICTURE 5 AMOUNT LABEL" description="PARAM PICTURE 5 AMOUNT DESCRIPTION" />
+		<param name="pic5_amount" type="text" default="1" size="2" label="PARAM PICTURE 5 AMOUNT LABEL" description="PARAM PICTURE 5 AMOUNT DESCRIPTION" />
+		<param name="pic5_link" type="text" default="" size="50" label="PARAM PICTURE 5 LINK LABEL" description="PARAM PICTURE 5 LINK DESCRIPTION" />
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="pic6_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 6 FILE LABEL" description="PARAM PICTURE 6 FILE DESCRIPTION" />
-		<param name="pic6_amount" type="text" default="1" label="PARAM PICTURE 6 AMOUNT LABEL" description="PARAM PICTURE 6 AMOUNT DESCRIPTION" />
+		<param name="pic6_amount" type="text" default="1" size="2" label="PARAM PICTURE 6 AMOUNT LABEL" description="PARAM PICTURE 6 AMOUNT DESCRIPTION" />
+		<param name="pic6_link" type="text" default="" size="50" label="PARAM PICTURE 6 LINK LABEL" description="PARAM PICTURE 6 LINK DESCRIPTION" />
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="pic7_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 7 FILE LABEL" description="PARAM PICTURE 7 FILE DESCRIPTION" />
-		<param name="pic7_amount" type="text" default="1" label="PARAM PICTURE 7 AMOUNT LABEL" description="PARAM PICTURE 7 AMOUNT DESCRIPTION" />
+		<param name="pic7_amount" type="text" default="1" size="2" label="PARAM PICTURE 7 AMOUNT LABEL" description="PARAM PICTURE 7 AMOUNT DESCRIPTION" />
+		<param name="pic7_link" type="text" default="" size="50" label="PARAM PICTURE 7 LINK LABEL" description="PARAM PICTURE 7 LINK DESCRIPTION" />
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="pic8_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 8 FILE LABEL" description="PARAM PICTURE 8 FILE DESCRIPTION" />
-		<param name="pic8_amount" type="text" default="1" label="PARAM PICTURE 8 AMOUNT LABEL" description="PARAM PICTURE 8 AMOUNT DESCRIPTION" />
+		<param name="pic8_amount" type="text" default="1" size="2" label="PARAM PICTURE 8 AMOUNT LABEL" description="PARAM PICTURE 8 AMOUNT DESCRIPTION" />
+		<param name="pic8_link" type="text" default="" size="50" label="PARAM PICTURE 8 LINK LABEL" description="PARAM PICTURE 8 LINK DESCRIPTION" />
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="pic9_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 9 FILE LABEL" description="PARAM PICTURE 9 FILE DESCRIPTION" />
-		<param name="pic9_amount" type="text" default="1" label="PARAM PICTURE 9 AMOUNT LABEL" description="PARAM PICTURE 9 AMOUNT DESCRIPTION" />
+		<param name="pic9_amount" type="text" default="1" size="2" label="PARAM PICTURE 9 AMOUNT LABEL" description="PARAM PICTURE 9 AMOUNT DESCRIPTION" />
+		<param name="pic9_link" type="text" default="" size="50" label="PARAM PICTURE 9 LINK LABEL" description="PARAM PICTURE 9 LINK DESCRIPTION" />
 		<param name="@spacer" type="spacer" default="" label="" description="" />
 		<param name="pic10_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 10 FILE LABEL" description="PARAM PICTURE 10 FILE DESCRIPTION" />
 		<param name="pic10_amount" type="text" default="1" label="PARAM PICTURE 10 AMOUNT LABEL" description="PARAM PICTURE 10 AMOUNT DESCRIPTION" />
+		<param name="pic10_link" type="text" default="" size="50" label="PARAM PICTURE 10 LINK LABEL" description="PARAM PICTURE 10 LINK DESCRIPTION" />
 	</params>
 </install>

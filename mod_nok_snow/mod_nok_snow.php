@@ -22,11 +22,11 @@ for ($i=1 ; $i <= $SNOW_AMOUNT_PICS ; $i++)
 	$file = $params->get('pic'.$i.'_file');
 	if ($file == '-1')
 	{
-		$config[$i-1] = array('',0);
+		$config[$i-1] = array('',0,'');
 	}
 	else
 	{
-		$config[$i-1] = array($file,intval($params->get('pic'.$i.'_amount')));
+		$config[$i-1] = array($file,intval($params->get('pic'.$i.'_amount')),$params->get('pic'.$i.'_link'));
 	}
 }
 $speed = intval($params->get('speed'));
@@ -42,6 +42,7 @@ for ($i=1 ; $i <= $SNOW_AMOUNT_PICS ; $i++)
 {
 	echo "var no".$i." = ".$config[$i-1][1]."; // Amount picture ".$i."\n";
 	echo "var file".$i." = '".$SNOW_PATH.DS.$config[$i-1][0]."'; // File picture ".$i."\n";
+	echo "var link".$i." = '".$config[$i-1][2]."'; // Link picture ".$i."\n";
 	$sumall .= "no".$i."+";
 }
 $sumall .= "0";
@@ -83,6 +84,7 @@ for (i = 0; i < no; i++)
 	sty[i] = 0.7 + Math.random(); // Set step variables
 
 	picture = file<?php echo $SNOW_AMOUNT_PICS; ?>   // Set file<?php echo $SNOW_AMOUNT_PICS; ?> as default
+	link = link<?php echo $SNOW_AMOUNT_PICS; ?>   // Set file<?php echo $SNOW_AMOUNT_PICS; ?> as default
 <?php
 for ($i=$SNOW_AMOUNT_PICS-1 ; $i >= 1 ; $i--)
 {
@@ -95,6 +97,7 @@ for ($i=$SNOW_AMOUNT_PICS-1 ; $i >= 1 ; $i--)
 	echo "	if (i<".$sumall.")\n";
 	echo "	{    // Picture ".$i."\n";
 	echo "		picture = file".$i."\n";
+	echo "		link = link".$i."\n";
 	echo "	}\n";
 }
 ?>
@@ -102,15 +105,27 @@ for ($i=$SNOW_AMOUNT_PICS-1 ; $i >= 1 ; $i--)
 	if (ns4up)
 	{  // IE
 		if (i == 0) {
-			document.write("<layer name=\"dot"+ i +"\" left=\"15\" ");
-			document.write("top=\"15\" visibility=\"show\"><img src=\"");
-			document.write(picture + "\" border=\"0\"></layer>");
+			document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\">");
+			if (link != '') {
+				document.write("<a href=\"" + link + "\" target=\"_blank\">");
+			}
+			document.write("<img src=\"" + picture + "\" border=\"0\">");
+			if (link != '') {
+				document.write("</a>");
+			}
+			document.write("</layer>");
 		} 
 		else
 		{
-			document.write("<layer name=\"dot"+ i +"\" left=\"15\" ");
-			document.write("top=\"15\" visibility=\"show\"><img src=\"");
-			document.write(picture + "\" border=\"0\"></layer>");
+			document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\">");
+			if (link != '') {
+				document.write("<a href=\"" + link + "\" target=\"_blank\">");
+			}
+			document.write("<img src=\"" + picture + "\" border=\"0\">");
+			if (link != '') {
+				document.write("</a>");
+			}
+			document.write("</layer>");
 		}
 	}
 	else
@@ -119,15 +134,29 @@ for ($i=$SNOW_AMOUNT_PICS-1 ; $i >= 1 ; $i--)
 		{
 			document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
 			document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
-			document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\"");
-			document.write(picture + "\" border=\"0\"></div>");
+			document.write("visible; TOP: 15px; LEFT: 15px;\">");
+			if (link != '') {
+				document.write("<a href=\"" + link + "\" target=\"_blank\">");
+			}
+			document.write("<img src=\"" + picture + "\" border=\"0\">");
+			if (link != '') {
+				document.write("</a>");
+			}
+			document.write("</div>");
 		}
 		else
 		{
 			document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
 			document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
-			document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\"");
-			document.write(picture + "\" border=\"0\"></div>");
+			document.write("visible; TOP: 15px; LEFT: 15px;\">");
+			if (link != '') {
+				document.write("<a href=\"" + link + "\" target=\"_blank\">");
+			}
+			document.write("<img src=\"" + picture + "\" border=\"0\">");
+			if (link != '') {
+				document.write("</a>");
+			}
+			document.write("</div>");
 		}
 	}
 } 
