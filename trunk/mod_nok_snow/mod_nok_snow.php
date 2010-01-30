@@ -11,8 +11,7 @@
 defined( '_JEXEC' ) or die( 'Restricted Access.' );
 
 // Settings
-$JPATH_IMAGES = $JPATH_ROOT . DS . 'media';
-$SNOW_PATH = $JPATH_IMAGES . DS . 'nok_snow';
+$SNOW_PATH = JPATH_ROOT . DS . 'media' . DS . 'nok_snow';
 $SNOW_AMOUNT_PICS = 10;
 
 // Get Configuration
