@@ -46,6 +46,11 @@
 		<filename>xmas_tree.gif</filename>
 	</media>
 	<params>
+		<param name="type" type="list" default="snow" label="PARAM TYPE LABEL" description="PARAM TYPE DESCRIPTION">
+			<option value="snow">Snowing</option>
+			<option value="rain">Rain</option>
+			<option value="bubble">Bubble</option>
+		</param>
 		<param name="speed" type="text" default="5" size="2" label="PARAM SPEED LABEL" description="PARAM SPEED DESCRIPTION" />
 		<param name="duration" type="text" default="0" size="3" label="PARAM DURATION LABEL" description="PARAM DURATION DESCRIPTION" />
 		<param name="@spacer" type="spacer" default="" label="" description="" />
