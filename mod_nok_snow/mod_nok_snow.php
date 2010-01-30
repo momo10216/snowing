@@ -11,7 +11,7 @@
 defined( '_JEXEC' ) or die( 'Restricted Access.' );
 
 // Settings
-$SNOW_PATH = JPATH_ROOT . DS . 'media' . DS . 'nok_snow';
+$SNOW_PATH = $JPATH_ROOT . DS . 'media' . DS . 'nok_snow';
 $SNOW_AMOUNT_PICS = 10;
 
 // Get Configuration
@@ -28,6 +28,7 @@ for ($i=1 ; $i <= $SNOW_AMOUNT_PICS ; $i++)
 		$config[$i-1] = array($file,intval($params->get('pic'.$i.'_amount')),$params->get('pic'.$i.'_link'));
 	}
 }
+$type = $params->get('type');
 $speed = intval($params->get('speed'));
 $duration = intval($params->get('duration'));
 ?>
@@ -47,6 +48,7 @@ for ($i=1 ; $i <= $SNOW_AMOUNT_PICS ; $i++)
 $sumall .= "0";
 ?>
 var no = <?php echo $sumall; ?>; // Total amount of pictures
+var type = '<?php echo $type; ?>'; // Move type
 var speed = <?php echo $speed; ?>; // Speed of falling (smaller = faster).
 var duration = <?php echo $duration; ?>; // Duration of playing.
 var ns4up = (document.layers) ? 1 : 0;  // Browser is Netscape Version 4.0 or higher
@@ -75,13 +77,31 @@ stx = new Array();
 sty = new Array();
 for (i = 0; i < no; i++)
 {
-	dx[i] = 0; // Set coordinate variables
-	xp[i] = Math.random()*(doc_width-50);  // Set position variables
-	yp[i] = Math.random()*doc_height;
-	am[i] = Math.random()*20; // Set amplitude variables
-	stx[i] = 0.02 + Math.random()/10; // Set step variables
-	sty[i] = 0.7 + Math.random(); // Set step variables
-
+	switch (type) {
+		case 'bubble':
+			dx[i] = 0; // Set coordinate variables
+			xp[i] = Math.random()*(doc_width-50);  // Set position variables
+			yp[i] = Math.random()*doc_height;
+			stx[i] = 0; // Set step variables
+			sty[i] = 0.7 + Math.random(); // Set step variables
+			break;
+		case 'rain':
+			dx[i] = 0; // Set coordinate variables
+			xp[i] = Math.random()*(doc_width-50);  // Set position variables
+			yp[i] = Math.random()*doc_height;
+			stx[i] = 0; // Set step variables
+			sty[i] = 0.7 + Math.random(); // Set step variables
+			break;
+		case 'snow':
+		default:
+			dx[i] = 0; // Set coordinate variables
+			xp[i] = Math.random()*(doc_width-50);  // Set position variables
+			yp[i] = Math.random()*doc_height;
+			am[i] = Math.random()*20; // Set amplitude variables
+			stx[i] = 0.02 + Math.random()/10; // Set step variables
+			sty[i] = 0.7 + Math.random(); // Set step variables
+			break;
+	}
 	picture = file<?php echo $SNOW_AMOUNT_PICS; ?>   // Set file<?php echo $SNOW_AMOUNT_PICS; ?> as default
 	link = link<?php echo $SNOW_AMOUNT_PICS; ?>   // Set file<?php echo $SNOW_AMOUNT_PICS; ?> as default
 <?php
@@ -165,19 +185,54 @@ function snowNS()
 	var now = new Date();
 	for (i = 0; i < no; i++)
 	{  // iterate for every dot
-		yp[i] += sty[i];
-		if (yp[i] > doc_height-50)
-		{
-			xp[i] = Math.random()*(doc_width-am[i]-30);
-			yp[i] = 0;
-			stx[i] = 0.02 + Math.random()/10;
-			sty[i] = 0.7 + Math.random();
-			doc_width = self.innerWidth;
-			doc_height = self.innerHeight;
+		switch (type) {
+			case 'bubble':
+				yp[i] -= sty[i];
+				if (yp[i] < 0)
+				{
+					xp[i] = Math.random()*(doc_width-50);  // Set position variables
+					yp[i] = doc_height-50 - 50;
+					stx[i] = 0; // Set step variables
+					sty[i] = 0.7 + Math.random(); // Set step variables
+					doc_width = self.innerWidth;
+					doc_height = self.innerHeight;
+				}
+				dx[i] += stx[i];
+				document.layers["dot"+i].top = yp[i];
+				document.layers["dot"+i].left = xp[i];
+				break;
+			case 'rain':
+				yp[i] += sty[i];
+				if (yp[i] > doc_height-50)
+				{
+					xp[i] = Math.random()*(doc_width-50);  // Set position variables
+					yp[i] = 0;
+					stx[i] = 0; // Set step variables
+					sty[i] = 0.7 + Math.random(); // Set step variables
+					doc_width = self.innerWidth;
+					doc_height = self.innerHeight;
+				}
+				dx[i] += stx[i];
+				document.layers["dot"+i].top = yp[i];
+				document.layers["dot"+i].left = xp[i];
+				break;
+			case 'snow':
+			default:
+				yp[i] += sty[i];
+				if (yp[i] > doc_height-50)
+				{
+					xp[i] = Math.random()*(doc_width-am[i]-30);
+					yp[i] = 0;
+					stx[i] = 0.02 + Math.random()/10;
+					sty[i] = 0.7 + Math.random();
+					doc_width = self.innerWidth;
+					doc_height = self.innerHeight;
+				}
+				dx[i] += stx[i];
+				document.layers["dot"+i].top = yp[i];
+				document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
+				break;
 		}
-		dx[i] += stx[i];
-		document.layers["dot"+i].top = yp[i];
-		document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
 		if ((duration != 0) && (now.getTime() >= endtime))
 		{
 			document.layers["dot"+i].visible = 'hidden';
@@ -194,19 +249,54 @@ function snowIE()
 	var now = new Date();
 	for (i = 0; i < no; i++)
 	{  // iterate for every dot
-		yp[i] += sty[i];
-		if (yp[i] > doc_height-50)
-		{
-			xp[i] = Math.random()*(doc_width-am[i]-30);
-			yp[i] = 0;
-			stx[i] = 0.02 + Math.random()/10;
-			sty[i] = 0.7 + Math.random();
-			doc_width = document.body.clientWidth;
-			doc_height = document.body.clientHeight;
+		switch (type) {
+			case 'bubble':
+				yp[i] -= sty[i];
+				if (yp[i] < 0)
+				{
+					xp[i] = Math.random()*(doc_width-50);
+					yp[i] = doc_height-50;
+					stx[i] = 0;
+					sty[i] = 0.7 + Math.random();
+					doc_width = document.body.clientWidth;
+					doc_height = document.body.clientHeight;
+				}
+				dx[i] += stx[i];
+				document.all["dot"+i].style.pixelTop = yp[i];
+				document.all["dot"+i].style.pixelLeft = xp[i];
+				break;
+			case 'rain':
+				yp[i] += sty[i];
+				if (yp[i] > doc_height-50)
+				{
+					xp[i] = Math.random()*(doc_width-50);
+					yp[i] = 0;
+					stx[i] = 0;
+					sty[i] = 0.7 + Math.random();
+					doc_width = document.body.clientWidth;
+					doc_height = document.body.clientHeight;
+				}
+				dx[i] += stx[i];
+				document.all["dot"+i].style.pixelTop = yp[i];
+				document.all["dot"+i].style.pixelLeft = xp[i];
+				break;
+			case 'snow':
+			default:
+				yp[i] += sty[i];
+				if (yp[i] > doc_height-50)
+				{
+					xp[i] = Math.random()*(doc_width-am[i]-30);
+					yp[i] = 0;
+					stx[i] = 0.02 + Math.random()/10;
+					sty[i] = 0.7 + Math.random();
+					doc_width = document.body.clientWidth;
+					doc_height = document.body.clientHeight;
+				}
+				dx[i] += stx[i];
+				document.all["dot"+i].style.pixelTop = yp[i];
+				document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+				break;
 		}
-		dx[i] += stx[i];
-		document.all["dot"+i].style.pixelTop = yp[i];
-		document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
 		if ((duration != 0) && (now.getTime() >= endtime))
 		{
 			document.all["dot"+i].style.visibility = 'hidden';
@@ -223,17 +313,48 @@ function snowOther()
 	var now = new Date();
 	for (i = 0; i < no; i++)
 	{  // iterate for every dot
-		yp[i] += sty[i];
-		if (yp[i] > doc_height-50)
-		{
-			xp[i] = Math.random()*(doc_width-am[i]-30);
-			yp[i] = 0;
-			stx[i] = 0.02 + Math.random()/10;
-			sty[i] = 0.7 + Math.random();
+		switch (type) {
+			case 'bubble':
+				yp[i] -= sty[i];
+				if (yp[i] < 0)
+				{
+					xp[i] = Math.random()*(doc_width-am[i]-30);
+					yp[i] = doc_height-50;
+					stx[i] = 0;
+					sty[i] = 0.7 + Math.random();
+				}
+				dx[i] += stx[i];
+				document.getElementById("dot"+i).style.top = yp[i]+'px';
+				document.getElementById("dot"+i).style.left = xp[i]+'px';
+				break;
+			case 'rain':
+				yp[i] += sty[i];
+				if (yp[i] > doc_height-50)
+				{
+					xp[i] = Math.random()*(doc_width-am[i]-30);
+					yp[i] = 0;
+					stx[i] = 0;
+					sty[i] = 0.7 + Math.random();
+				}
+				dx[i] += stx[i];
+				document.getElementById("dot"+i).style.top = yp[i]+'px';
+				document.getElementById("dot"+i).style.left = xp[i]+'px';
+				break;
+			case 'snow':
+			default:
+				yp[i] += sty[i];
+				if (yp[i] > doc_height-50)
+				{
+					xp[i] = Math.random()*(doc_width-am[i]-30);
+					yp[i] = 0;
+					stx[i] = 0.02 + Math.random()/10;
+					sty[i] = 0.7 + Math.random();
+				}
+				dx[i] += stx[i];
+				document.getElementById("dot"+i).style.top = yp[i]+'px';
+				document.getElementById("dot"+i).style.left = (xp[i] + am[i]*Math.sin(dx[i]))+'px';
+				break;
 		}
-		dx[i] += stx[i];
-		document.getElementById("dot"+i).style.top = yp[i]+'px';
-		document.getElementById("dot"+i).style.left = (xp[i] + am[i]*Math.sin(dx[i]))+'px';
 		if ((duration != 0) && (now.getTime() >= endtime))
 		{
 			document.getElementById("dot"+i).style.visibility = 'hidden';
