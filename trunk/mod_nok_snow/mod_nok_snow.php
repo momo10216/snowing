@@ -78,13 +78,15 @@ sty = new Array();
 for (i = 0; i < no; i++)
 {
 	switch (type) {
-		case 'bubble':
+		case 'right2left':
+		case 'left2right':
 			dx[i] = 0; // Set coordinate variables
 			xp[i] = Math.random()*(doc_width-50);  // Set position variables
 			yp[i] = Math.random()*doc_height;
-			stx[i] = 0; // Set step variables
-			sty[i] = 0.7 + Math.random(); // Set step variables
+			stx[i] = 0.7 + Math.random(); // Set step variables
+			sty[i] = 0; // Set step variables
 			break;
+		case 'bubble':
 		case 'rain':
 			dx[i] = 0; // Set coordinate variables
 			xp[i] = Math.random()*(doc_width-50);  // Set position variables
@@ -186,12 +188,40 @@ function snowNS()
 	for (i = 0; i < no; i++)
 	{  // iterate for every dot
 		switch (type) {
+			case 'right2left':
+				xp[i] -= stx[i];
+				if (xp[i] < 0)
+				{
+					xp[i] = doc_width-50;  // Set position variables
+					yp[i] = Math.random()*(doc_height-50);
+					stx[i] = 0.7 + Math.random(); // Set step variables
+					sty[i] = 0; // Set step variables
+					doc_width = self.innerWidth;
+					doc_height = self.innerHeight;
+				}
+				document.layers["dot"+i].top = yp[i];
+				document.layers["dot"+i].left = xp[i];
+				break;
+			case 'left2right':
+				xp[i] += stx[i];
+				if (xp[i] > (doc_width-50))
+				{
+					xp[i] = 0;  // Set position variables
+					yp[i] = Math.random()*(doc_height-50);
+					stx[i] = 0.7 + Math.random(); // Set step variables
+					sty[i] = 0; // Set step variables
+					doc_width = self.innerWidth;
+					doc_height = self.innerHeight;
+				}
+				document.layers["dot"+i].top = yp[i];
+				document.layers["dot"+i].left = xp[i];
+				break;
 			case 'bubble':
 				yp[i] -= sty[i];
 				if (yp[i] < 0)
 				{
 					xp[i] = Math.random()*(doc_width-50);  // Set position variables
-					yp[i] = doc_height-50 - 50;
+					yp[i] = doc_height-50;
 					stx[i] = 0; // Set step variables
 					sty[i] = 0.7 + Math.random(); // Set step variables
 					doc_width = self.innerWidth;
@@ -250,6 +280,34 @@ function snowIE()
 	for (i = 0; i < no; i++)
 	{  // iterate for every dot
 		switch (type) {
+			case 'right2left':
+				xp[i] -= stx[i];
+				if (xp[i] < 0)
+				{
+					xp[i] = doc_width-50;  // Set position variables
+					yp[i] = Math.random()*(doc_height-50);
+					stx[i] = 0.7 + Math.random(); // Set step variables
+					sty[i] = 0; // Set step variables
+					doc_width = document.body.clientWidth;
+					doc_height = document.body.clientHeight;
+				}
+				document.all["dot"+i].style.pixelTop = yp[i];
+				document.all["dot"+i].style.pixelLeft = xp[i];
+				break;
+			case 'left2right':
+				xp[i] += stx[i];
+				if (xp[i] > (doc_width-50))
+				{
+					xp[i] = 0;  // Set position variables
+					yp[i] = Math.random()*(doc_height-50);
+					stx[i] = 0.7 + Math.random(); // Set step variables
+					sty[i] = 0; // Set step variables
+					doc_width = document.body.clientWidth;
+					doc_height = document.body.clientHeight;
+				}
+				document.all["dot"+i].style.pixelTop = yp[i];
+				document.all["dot"+i].style.pixelLeft = xp[i];
+				break;
 			case 'bubble':
 				yp[i] -= sty[i];
 				if (yp[i] < 0)
@@ -314,6 +372,30 @@ function snowOther()
 	for (i = 0; i < no; i++)
 	{  // iterate for every dot
 		switch (type) {
+			case 'right2left':
+				xp[i] -= stx[i];
+				if (xp[i] < 0)
+				{
+					xp[i] = doc_width-50;  // Set position variables
+					yp[i] = Math.random()*(doc_height-50);
+					stx[i] = 0.7 + Math.random(); // Set step variables
+					sty[i] = 0; // Set step variables
+				}
+				document.getElementById("dot"+i).style.top = yp[i]+'px';
+				document.getElementById("dot"+i).style.left = xp[i]+'px';
+				break;
+			case 'left2right':
+				xp[i] += stx[i];
+				if (xp[i] > (doc_width-50))
+				{
+					xp[i] = 0;  // Set position variables
+					yp[i] = Math.random()*(doc_height-50);
+					stx[i] = 0.7 + Math.random(); // Set step variables
+					sty[i] = 0; // Set step variables
+				}
+				document.getElementById("dot"+i).style.top = yp[i]+'px';
+				document.getElementById("dot"+i).style.left = xp[i]+'px';
+				break;
 			case 'bubble':
 				yp[i] -= sty[i];
 				if (yp[i] < 0)
