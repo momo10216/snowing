@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <install type="module" version="1.5.0" method="upgrade">
     <name>Snowing</name>
-    <creationDate>10/19/2009</creationDate>
+    <creationDate>01/31/2010</creationDate>
     <author>Norbert Kuemin</author>
 	<authorEmail>momo_102@bluemail.ch</authorEmail>
-	<copyright>(C) 2009 Norbert Kuemin</copyright>
+	<copyright>(C) 2010 Norbert Kuemin</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-    <version>1.0</version>
+    <version>1.2</version>
     <description>Snowing module for different pictures. Put your own pics in /media/nok_snow.</description>
     <files>
 		<filename module="mod_nok_snow">mod_nok_snow.php</filename>
@@ -50,6 +50,8 @@
 			<option value="snow">Snowing</option>
 			<option value="rain">Rain</option>
 			<option value="bubble">Bubble</option>
+			<option value="left2right">Left 2 Right</option>
+			<option value="right2left">Right 2 Left</option>
 		</param>
 		<param name="speed" type="text" default="5" size="2" label="PARAM SPEED LABEL" description="PARAM SPEED DESCRIPTION" />
 		<param name="duration" type="text" default="0" size="3" label="PARAM DURATION LABEL" description="PARAM DURATION DESCRIPTION" />
