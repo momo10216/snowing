@@ -154,7 +154,7 @@ for ($i=$SNOW_AMOUNT_PICS-1 ; $i >= 1 ; $i--)
 		if (i == 0)
 		{
 			document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
-			document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
+			document.write("absolute; Z-INDEX: "+ (100+i) +"; VISIBILITY: ");
 			document.write("visible; TOP: 15px; LEFT: 15px;\">");
 			if (link != '') {
 				document.write("<a href=\"" + link + "\" target=\"_blank\">");
@@ -168,7 +168,7 @@ for ($i=$SNOW_AMOUNT_PICS-1 ; $i >= 1 ; $i--)
 		else
 		{
 			document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
-			document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
+			document.write("absolute; Z-INDEX: "+ (100+i) +"; VISIBILITY: ");
 			document.write("visible; TOP: 15px; LEFT: 15px;\">");
 			if (link != '') {
 				document.write("<a href=\"" + link + "\" target=\"_blank\">");
