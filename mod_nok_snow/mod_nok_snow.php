@@ -1,6 +1,6 @@
 <?php
 /**
-* @version		0.3
+* @version		2.5
 * @package		Joomla
 * @subpackage	Module nok_snow
 * @copyright	Copyright (c) 2009 Norbert Kümin. All rights reserved.
