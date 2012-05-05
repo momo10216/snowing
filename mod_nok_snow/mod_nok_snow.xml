@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<extension type="module" version="1.6.0" client="site" method="upgrade">
-    <name>Snowing</name>
-    <creationDate>04/03/2011</creationDate>
-    <author>Norbert Kuemin</author>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+	<name>Snowing</name>
+	<creationDate>04/03/2011</creationDate>
+	<author>Norbert Kuemin</author>
 	<authorEmail>momo_102@bluemail.ch</authorEmail>
 	<copyright>(C) 2011 Norbert Kuemin</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-    <version>2.5</version>
-    <description>Moving different pictures across you site. Put your own pics in /media/nok_snow.</description>
-    <files>
+	<version>2.5</version>
+	<description>Moving different pictures across you site. Put your own pics in /media/nok_snow.</description>
+	<files>
 		<filename module="mod_nok_snow">mod_nok_snow.php</filename>
-    </files>
+	</files>
 	<languages>
 		<language tag="en-GB">en-GB.mod_nok_snow.ini</language>
 		<language tag="de-DE">de-DE.mod_nok_snow.ini</language>
@@ -22,7 +22,7 @@
 		<filename>birthday_candle.gif</filename>
 		<filename>birthday_present.gif</filename>
 		<filename>candy_green.gif</filename>
-	    <filename>candy_red.gif</filename>
+		<filename>candy_red.gif</filename>
 		<filename>carebear_blue.gif</filename>
 		<filename>carebear_cyan.gif</filename>
 		<filename>carebear_green.gif</filename>
