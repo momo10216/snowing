@@ -1,14 +1,14 @@
 <?php
 /**
-* @version		2.5
-* @package		Joomla
+* @version	$id$
+* @package	Joomla
 * @subpackage	Module nok_snow
 * @copyright	Copyright (c) 2009 Norbert Kümin. All rights reserved.
-* @license		http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE
-* @author		Norbert Kuemin
+* @license	http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE
+* @author	Norbert Kuemin
 * @authorEmail	momo_102@bluemail.ch
 */
-defined( '_JEXEC' ) or die( 'Restricted Access.' );
+defined( '_JEXEC' ) or die;
 
 // Settings
 $SNOW_PATH = 'media' . DS . 'nok_snow';
