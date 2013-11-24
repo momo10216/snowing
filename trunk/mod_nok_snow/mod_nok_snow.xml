@@ -101,6 +101,6 @@
 		</fields>
 	</config>
 	<updateservers>
-		<server type="extension" priority="2" name="Snowing Updates">http://joomlacode.org/gf/project/snowing/scmsvn/?action=browse&path=%2F*checkout*%2Ftags%2Fupdate%2Fupdate_2.5.xml</server>
+		<server type="extension" priority="2" name="Snowing Updates">http://joomlacode.org/gf/project/snowing/scmsvn/?action=browse&amp;path=%2F*checkout*%2Ftags%2Fupdate%2Fupdate_2.5.xml</server>
 	</updateservers>
 </extension>
