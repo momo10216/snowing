@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<extension type="module" version="2.5.0" client="site" method="upgrade">
+<extension type="module" version="3.2" client="site" method="upgrade">
 	<name>Snowing</name>
-	<creationDate>04/03/2011</creationDate>
+	<creationDate>05/01/2014</creationDate>
 	<author>Norbert Kuemin</author>
 	<authorEmail>momo_102@bluemail.ch</authorEmail>
-	<copyright>(C) 2011 Norbert Kuemin</copyright>
+	<copyright>(C) 2014 Norbert Kuemin</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-	<version>2.5</version>
+	<version>3.2.1</version>
 	<description>Moving different pictures across you site. Put your own pics in /media/nok_snow.</description>
 	<files>
 		<filename module="mod_nok_snow">mod_nok_snow.php</filename>
@@ -101,6 +101,6 @@
 		</fields>
 	</config>
 	<updateservers>
-		<server type="extension" priority="2" name="Snowing Updates">http://joomlacode.org/gf/project/snowing/scmsvn/?action=browse&amp;path=%2F*checkout*%2Ftags%2Fupdate%2Fupdate_2.5.xml</server>
+		<server type="extension" priority="2" name="Snowing Updates">http://joomlacode.org/gf/project/snowing/scmsvn/?action=browse&amp;path=%2F*checkout*%2Ftags%2Fupdate%2Fupdate_3.2.xml</server>
 	</updateservers>
 </extension>
