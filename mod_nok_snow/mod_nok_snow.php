@@ -11,7 +11,7 @@
 defined( '_JEXEC' ) or die;
 
 // Settings
-$SNOW_PATH = 'media' . DS . 'nok_snow';
+$SNOW_PATH = JURI::Root().'/media/nok_snow';
 $SNOW_AMOUNT_PICS = 10;
 
 // Get Configuration
@@ -41,7 +41,7 @@ $sumall = "";
 for ($i=1 ; $i <= $SNOW_AMOUNT_PICS ; $i++)
 {
 	echo "var no".$i." = ".$config[$i-1][1]."; // Amount picture ".$i."\n";
-	echo "var file".$i." = '".$SNOW_PATH.DS.$config[$i-1][0]."'; // File picture ".$i."\n";
+	echo "var file".$i." = '".$SNOW_PATH."/".$config[$i-1][0]."'; // File picture ".$i."\n";
 	echo "var link".$i." = '".$config[$i-1][2]."'; // Link picture ".$i."\n";
 	$sumall .= "no".$i."+";
 }
