@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <extension type="module" version="3.2" client="site" method="upgrade">
-	<name>Snowing</name>
+	<name>MOD_NOK_SNOW_APP_NAME</name>
 	<creationDate>05/01/2014</creationDate>
 	<author>Norbert Kuemin</author>
 	<authorEmail>momo_102@bluemail.ch</authorEmail>
-	<copyright>(C) 2014 Norbert Kuemin</copyright>
+	<copyright>(C) 2015 Norbert Kuemin</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-	<version>3.2.1</version>
-	<description>Moving different pictures across you site. Put your own pics in /media/nok_snow.</description>
+	<version>3.0.0</version>
+	<description>MOD_NOK_SNOW_APP_DESC</description>
 	<files>
 		<filename module="mod_nok_snow">mod_nok_snow.php</filename>
 	</files>
 	<languages>
 		<language tag="en-GB">en-GB.mod_nok_snow.ini</language>
+		<language tag="en-GB">en-GB.mod_nok_snow.sys.ini</language>
 		<language tag="de-DE">de-DE.mod_nok_snow.ini</language>
+		<language tag="de-DE">de-DE.mod_nok_snow.sys.ini</language>
 	</languages>
 	<media folder="pictures" destination="nok_snow">
 		<filename>index.html</filename>
@@ -55,52 +57,52 @@
 					<option value="left2right">Left 2 Right</option>
 					<option value="right2left">Right 2 Left</option>
 				</field>
-				<field name="speed" type="text" default="5" size="2" label="PARAM SPEED LABEL" description="PARAM SPEED DESCRIPTION" />
-				<field name="duration" type="text" default="0" size="3" label="PARAM DURATION LABEL" description="PARAM DURATION DESCRIPTION" />
+				<field name="speed" type="text" default="5" size="2" label="MOD_NOK_SNOW_PARAM_SPEED LABEL" description="MOD_NOK_SNOW_PARAM_SPEED_DESC" />
+				<field name="duration" type="text" default="0" size="3" label="MOD_NOK_SNOW_PARAM_DURATION LABEL" description="MOD_NOK_SNOW_PARAM_DURATION_DESC" />
 				<field name="@spacer" type="spacer" default="" label="" description="" />
-				<field name="pic1_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 1 FILE LABEL" description="PARAM PICTURE 1 FILE DESCRIPTION" />
-				<field name="pic1_amount" type="text" default="1" size="2" label="PARAM PICTURE 1 AMOUNT LABEL" description="PARAM PICTURE 1 AMOUNT DESCRIPTION" />
-				<field name="pic1_link" type="text" default="" size="50" label="PARAM PICTURE 1 LINK LABEL" description="PARAM PICTURE 1 LINK DESCRIPTION" />
+				<field name="pic1_file" type="imagelist" directory="/media/nok_snow" default="-1" label="MOD_NOK_SNOW_PARAM_PICTURE 1 FILE LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 1 FILE_DESC" />
+				<field name="pic1_amount" type="text" default="1" size="2" label="MOD_NOK_SNOW_PARAM_PICTURE 1 AMOUNT LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 1 AMOUNT_DESC" />
+				<field name="pic1_link" type="text" default="" size="50" label="MOD_NOK_SNOW_PARAM_PICTURE 1 LINK LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 1 LINK_DESC" />
 				<field name="@spacer" type="spacer" default="" label="" description="" />
-				<field name="pic2_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 2 FILE LABEL" description="PARAM PICTURE 2 FILE DESCRIPTION" />
-				<field name="pic2_amount" type="text" default="1" size="2" label="PARAM PICTURE 2 AMOUNT LABEL" description="PARAM PICTURE 2 AMOUNT DESCRIPTION" />
-				<field name="pic2_link" type="text" default="" size="50" label="PARAM PICTURE 2 LINK LABEL" description="PARAM PICTURE 2 LINK DESCRIPTION" />
+				<field name="pic2_file" type="imagelist" directory="/media/nok_snow" default="-1" label="MOD_NOK_SNOW_PARAM_PICTURE 2 FILE LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 2 FILE_DESC" />
+				<field name="pic2_amount" type="text" default="1" size="2" label="MOD_NOK_SNOW_PARAM_PICTURE 2 AMOUNT LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 2 AMOUNT_DESC" />
+				<field name="pic2_link" type="text" default="" size="50" label="MOD_NOK_SNOW_PARAM_PICTURE 2 LINK LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 2 LINK_DESC" />
 				<field name="@spacer" type="spacer" default="" label="" description="" />
-				<field name="pic3_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 3 FILE LABEL" description="PARAM PICTURE 3 FILE DESCRIPTION" />
-				<field name="pic3_amount" type="text" default="1" size="2" label="PARAM PICTURE 3 AMOUNT LABEL" description="PARAM PICTURE 3 AMOUNT DESCRIPTION" />
-				<field name="pic3_link" type="text" default="" size="50" label="PARAM PICTURE 3 LINK LABEL" description="PARAM PICTURE 3 LINK DESCRIPTION" />
+				<field name="pic3_file" type="imagelist" directory="/media/nok_snow" default="-1" label="MOD_NOK_SNOW_PARAM_PICTURE 3 FILE LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 3 FILE_DESC" />
+				<field name="pic3_amount" type="text" default="1" size="2" label="MOD_NOK_SNOW_PARAM_PICTURE 3 AMOUNT LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 3 AMOUNT_DESC" />
+				<field name="pic3_link" type="text" default="" size="50" label="MOD_NOK_SNOW_PARAM_PICTURE 3 LINK LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 3 LINK_DESC" />
 				<field name="@spacer" type="spacer" default="" label="" description="" />
-				<field name="pic4_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 4 FILE LABEL" description="PARAM PICTURE 4 FILE DESCRIPTION" />
-				<field name="pic4_amount" type="text" default="1" size="2" label="PARAM PICTURE 4 AMOUNT LABEL" description="PARAM PICTURE 4 AMOUNT DESCRIPTION" />
-				<field name="pic4_link" type="text" default="" size="50" label="PARAM PICTURE 4 LINK LABEL" description="PARAM PICTURE 4 LINK DESCRIPTION" />
+				<field name="pic4_file" type="imagelist" directory="/media/nok_snow" default="-1" label="MOD_NOK_SNOW_PARAM_PICTURE 4 FILE LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 4 FILE_DESC" />
+				<field name="pic4_amount" type="text" default="1" size="2" label="MOD_NOK_SNOW_PARAM_PICTURE 4 AMOUNT LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 4 AMOUNT_DESC" />
+				<field name="pic4_link" type="text" default="" size="50" label="MOD_NOK_SNOW_PARAM_PICTURE 4 LINK LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 4 LINK_DESC" />
 				<field name="@spacer" type="spacer" default="" label="" description="" />
-				<field name="pic5_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 5 FILE LABEL" description="PARAM PICTURE 5 FILE DESCRIPTION" />
-				<field name="pic5_amount" type="text" default="1" size="2" label="PARAM PICTURE 5 AMOUNT LABEL" description="PARAM PICTURE 5 AMOUNT DESCRIPTION" />
-				<field name="pic5_link" type="text" default="" size="50" label="PARAM PICTURE 5 LINK LABEL" description="PARAM PICTURE 5 LINK DESCRIPTION" />
+				<field name="pic5_file" type="imagelist" directory="/media/nok_snow" default="-1" label="MOD_NOK_SNOW_PARAM_PICTURE 5 FILE LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 5 FILE_DESC" />
+				<field name="pic5_amount" type="text" default="1" size="2" label="MOD_NOK_SNOW_PARAM_PICTURE 5 AMOUNT LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 5 AMOUNT_DESC" />
+				<field name="pic5_link" type="text" default="" size="50" label="MOD_NOK_SNOW_PARAM_PICTURE 5 LINK LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 5 LINK_DESC" />
 				<field name="@spacer" type="spacer" default="" label="" description="" />
-				<field name="pic6_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 6 FILE LABEL" description="PARAM PICTURE 6 FILE DESCRIPTION" />
-				<field name="pic6_amount" type="text" default="1" size="2" label="PARAM PICTURE 6 AMOUNT LABEL" description="PARAM PICTURE 6 AMOUNT DESCRIPTION" />
-				<field name="pic6_link" type="text" default="" size="50" label="PARAM PICTURE 6 LINK LABEL" description="PARAM PICTURE 6 LINK DESCRIPTION" />
+				<field name="pic6_file" type="imagelist" directory="/media/nok_snow" default="-1" label="MOD_NOK_SNOW_PARAM_PICTURE 6 FILE LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 6 FILE_DESC" />
+				<field name="pic6_amount" type="text" default="1" size="2" label="MOD_NOK_SNOW_PARAM_PICTURE 6 AMOUNT LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 6 AMOUNT_DESC" />
+				<field name="pic6_link" type="text" default="" size="50" label="MOD_NOK_SNOW_PARAM_PICTURE 6 LINK LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 6 LINK_DESC" />
 				<field name="@spacer" type="spacer" default="" label="" description="" />
-				<field name="pic7_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 7 FILE LABEL" description="PARAM PICTURE 7 FILE DESCRIPTION" />
-				<field name="pic7_amount" type="text" default="1" size="2" label="PARAM PICTURE 7 AMOUNT LABEL" description="PARAM PICTURE 7 AMOUNT DESCRIPTION" />
-				<field name="pic7_link" type="text" default="" size="50" label="PARAM PICTURE 7 LINK LABEL" description="PARAM PICTURE 7 LINK DESCRIPTION" />
+				<field name="pic7_file" type="imagelist" directory="/media/nok_snow" default="-1" label="MOD_NOK_SNOW_PARAM_PICTURE 7 FILE LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 7 FILE_DESC" />
+				<field name="pic7_amount" type="text" default="1" size="2" label="MOD_NOK_SNOW_PARAM_PICTURE 7 AMOUNT LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 7 AMOUNT_DESC" />
+				<field name="pic7_link" type="text" default="" size="50" label="MOD_NOK_SNOW_PARAM_PICTURE 7 LINK LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 7 LINK_DESC" />
 				<field name="@spacer" type="spacer" default="" label="" description="" />
-				<field name="pic8_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 8 FILE LABEL" description="PARAM PICTURE 8 FILE DESCRIPTION" />
-				<field name="pic8_amount" type="text" default="1" size="2" label="PARAM PICTURE 8 AMOUNT LABEL" description="PARAM PICTURE 8 AMOUNT DESCRIPTION" />
-				<field name="pic8_link" type="text" default="" size="50" label="PARAM PICTURE 8 LINK LABEL" description="PARAM PICTURE 8 LINK DESCRIPTION" />
+				<field name="pic8_file" type="imagelist" directory="/media/nok_snow" default="-1" label="MOD_NOK_SNOW_PARAM_PICTURE 8 FILE LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 8 FILE_DESC" />
+				<field name="pic8_amount" type="text" default="1" size="2" label="MOD_NOK_SNOW_PARAM_PICTURE 8 AMOUNT LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 8 AMOUNT_DESC" />
+				<field name="pic8_link" type="text" default="" size="50" label="MOD_NOK_SNOW_PARAM_PICTURE 8 LINK LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 8 LINK_DESC" />
 				<field name="@spacer" type="spacer" default="" label="" description="" />
-				<field name="pic9_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 9 FILE LABEL" description="PARAM PICTURE 9 FILE DESCRIPTION" />
-				<field name="pic9_amount" type="text" default="1" size="2" label="PARAM PICTURE 9 AMOUNT LABEL" description="PARAM PICTURE 9 AMOUNT DESCRIPTION" />
-				<field name="pic9_link" type="text" default="" size="50" label="PARAM PICTURE 9 LINK LABEL" description="PARAM PICTURE 9 LINK DESCRIPTION" />
+				<field name="pic9_file" type="imagelist" directory="/media/nok_snow" default="-1" label="MOD_NOK_SNOW_PARAM_PICTURE 9 FILE LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 9 FILE_DESC" />
+				<field name="pic9_amount" type="text" default="1" size="2" label="MOD_NOK_SNOW_PARAM_PICTURE 9 AMOUNT LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 9 AMOUNT_DESC" />
+				<field name="pic9_link" type="text" default="" size="50" label="MOD_NOK_SNOW_PARAM_PICTURE 9 LINK LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 9 LINK_DESC" />
 				<field name="@spacer" type="spacer" default="" label="" description="" />
-				<field name="pic10_file" type="imagelist" directory="/media/nok_snow" default="-1" label="PARAM PICTURE 10 FILE LABEL" description="PARAM PICTURE 10 FILE DESCRIPTION" />
-				<field name="pic10_amount" type="text" default="1" label="PARAM PICTURE 10 AMOUNT LABEL" description="PARAM PICTURE 10 AMOUNT DESCRIPTION" />
-				<field name="pic10_link" type="text" default="" size="50" label="PARAM PICTURE 10 LINK LABEL" description="PARAM PICTURE 10 LINK DESCRIPTION" />
+				<field name="pic10_file" type="imagelist" directory="/media/nok_snow" default="-1" label="MOD_NOK_SNOW_PARAM_PICTURE 10 FILE LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 10 FILE_DESC" />
+				<field name="pic10_amount" type="text" default="1" label="MOD_NOK_SNOW_PARAM_PICTURE 10 AMOUNT LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 10 AMOUNT_DESC" />
+				<field name="pic10_link" type="text" default="" size="50" label="MOD_NOK_SNOW_PARAM_PICTURE 10 LINK LABEL" description="MOD_NOK_SNOW_PARAM_PICTURE 10 LINK_DESC" />
 			</fieldset>
 		</fields>
 	</config>
 	<updateservers>
-		<server type="extension" priority="2" name="Snowing Updates">http://joomlacode.org/gf/project/snowing/scmsvn/?action=browse&amp;path=%2F*checkout*%2Ftags%2Fupdate%2Fupdate_3.2.xml</server>
+		<server type="extension" priority="2" name="MOD_NOK_SNOW_APP_UPDATE">http://kuem.in/joomlaupdate/mod_nok_snow.xml</server>
 	</updateservers>
 </extension>
