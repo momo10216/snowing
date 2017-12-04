@@ -8,7 +8,9 @@
 * @author	Norbert Kuemin
 * @authorEmail	momo_102@bluemail.ch
 */
-defined( '_JEXEC' ) or die;
+
+// Check to ensure this file is included in Joomla!
+defined('_JEXEC') or die('Restricted access');
 
 // Settings
 $SNOW_PATH = JURI::Root().'/media/nok_snow';

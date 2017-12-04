@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <extension type="module" version="3.2" client="site" method="upgrade">
-	<name>MOD_NOK_SNOW_APP_NAME</name>
+	<name>MOD_NOK_SNOW</name>
 	<creationDate>05/01/2014</creationDate>
 	<author>Norbert Kuemin</author>
 	<authorEmail>momo_102@bluemail.ch</authorEmail>
@@ -11,7 +11,7 @@
 	<files>
 		<filename module="mod_nok_snow">mod_nok_snow.php</filename>
 	</files>
-	<languages>
+	<languages folder="language">
 		<language tag="en-GB">en-GB.mod_nok_snow.ini</language>
 		<language tag="en-GB">en-GB.mod_nok_snow.sys.ini</language>
 		<language tag="de-DE">de-DE.mod_nok_snow.ini</language>
