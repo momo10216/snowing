@@ -6,7 +6,7 @@
 	<authorEmail>momo_102@bluemail.ch</authorEmail>
 	<copyright>(C) 2015 Norbert Kuemin</copyright>
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-	<version>3.0.1</version>
+	<version>3.0.2</version>
 	<description>MOD_NOK_SNOW_APP_DESC</description>
 	<files>
 		<filename module="mod_nok_snow">mod_nok_snow.php</filename>
@@ -15,6 +15,8 @@
 	<languages folder="language">
 		<language tag="en-GB">en-GB.mod_nok_snow.ini</language>
 		<language tag="en-GB">en-GB.mod_nok_snow.sys.ini</language>
+		<language tag="es-ES">es-ES.mod_nok_snow.ini</language>
+		<language tag="es-ES">es-ES.mod_nok_snow.sys.ini</language>
 		<language tag="de-DE">de-DE.mod_nok_snow.ini</language>
 		<language tag="de-DE">de-DE.mod_nok_snow.sys.ini</language>
 	</languages>
